@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pagina biblioteca</title>
+    <link rel="shortcut icon" href="img/libro.png" type="image/x-icon">
+    <link rel="stylesheet" href="">
+    <link rel="Pages" href="">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'open sans';
+}
+
+.contenedor {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo {
+    color: #642a73;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Header */
+
+header {
+    width: 100%;
+    height: 600px;
+    background: #bc4e9c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(../img/imBiblio.jpeg);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(../img/imBiblio.jpeg);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav > a{
+    color:#fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+nav > a:hover{
+    text-decoration: underline;
+}
+
+header .textos-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1{
+    font-size: 50px;
+    color:#fff;
+}
+
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color:#fff;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* About us */
+
+main .sobre-nosotros{
+    padding: 30px 0 60px 0;
+}
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imagen-about-us{
+    width: 48%;
+}
+
+.sobre-nosotros .contenido-textos{
+    width: 48%;
+}
+
+.contenido-textos h3{
+    margin-bottom: 15px;
+}
+
+.contenido-textos h3 span{
+    background: #4d0686;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
+
+.contenido-textos p{
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+/* Galeria */
+
+
+.portafolio{
+    background: #f2f2f2;
+}
+
+.galeria-port{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.imagen-port{
+    width: 24%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-port > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(273,91%,27%, 0.7);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hover-galeria img{
+    width: 50px;
+}
+
+.hover-galeria p{
+    color: #fff;
+}
+
+.imagen-port:hover .hover-galeria{
+    transform: scale(1);
+}
+
+/* Clients */
+
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards .card{
+    background: #4d0686;
+    display: flex;
+    width: 46%;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cards .card img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
+
+.cards .card > .contenido-texto-card{
+    width: 60%;
+    color: #fff;
+}
+
+.cards .card > .contenido-texto-card p{
+    font-weight: 300;
+    padding-top: 5px;
+}
+
+/*  Our team */
+
+.about-services{
+    background: #f2f2f2;
+    padding-bottom: 30px;
+}
+
+
+.servicio-cont{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicio-ind{
+    width: 28%;
+    text-align: center;
+}
+
+.servicio-ind img{
+    width: 90%;
+}
+
+.servicio-ind h3{
+    margin: 10px 0;
+}
+
+.servicio-ind p{
+    font-weight: 300;
+    text-align: justify;
+}
+
+/* footer */
+
+footer{
+    background: #414141;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo{
+    text-align: center;
+}
+
+.content-foo h4{
+    color: #fff;
+    border-bottom: 3px solid #af20d3;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p{
+    color: #ccc;
+}
+
+.titulo-final{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #9e9797;
+}
+
+@media screen and (max-width:900px){
+    header{
+        background-position: center;
+    }
+
+    .contenedor-sobre-nosotros{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sobre-nosotros .contenido-textos{
+        width: 90%;
+    }
+
+    .imagen-about-us{
+        width: 90%;
+    }
+
+    /* Galeria */
+
+    .imagen-port{
+        width: 44%;
+    }
+
+    /* Clientes */
+
+    .cards{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards .card{
+        width: 90%;
+    }
+
+    .cards .card:first-child{
+        margin-bottom: 30px;
+    }
+
+    /* servicios */
+
+    .servicio-cont{
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .servicio-ind{
+        width: 100%;
+        text-align: center;
+    }
+
+    .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
+        margin-bottom: 60px;
+    }
+
+    .servicio-ind img{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:500px){
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav > a{
+        margin-right: 5px;
+    }
+
+    .textos-header h1{
+        font-size: 35px;
+    }
+
+    .textos-header h2{
+        font-size: 20px;
+    }
+
+    /* ABOUT US */
+
+    .imagen-about-us{
+        margin-bottom: 60px;
+        width: 99%;
+    }
+
+    .sobre-nosotros .contenido-textos{
+        width: 95%;
+    }
+
+    /* Galeria */
+
+    .imagen-port{
+        width: 95%;
+    }
+
+    /* Clients */
+
+    .cards .card{
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards .card img{
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Footer */
+
+    .contenedor-footer{
+        flex-direction: column;
+        border: none;
+    }
+
+    .content-foo{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .content-foo h4{
+        border: none;
+    }
+
+    .content-foo p{
+        color: #ccc;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 20px;
+    }
+
+    .titulo-final{
+        font-size: 20px;
+    }
+}
+/* Pagina quienes somos*/
+header .textos-headerSN {
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.sobre-nosotros .contenido-textos{
+    width: 48%;
+}
+
+.textos-headerSN h1{
+    font-size: 50px;
+    color:#fff;
+}
+
+.textos-headerSN h2{
+    font-size: 30px;
+    font-weight: 300;
+    color:#fff;
+}
+.titulo-quienes-somos{
+    color: #642a73;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+    height:50px;
+    width:400px;
+    padding:50px 20px 20px 50px;
+}
+/* sobre-Nosotros */
+main .sobre-nosotros{
+    padding: 30px 0 60px 0;
+}
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.contenedor-quienes-somos{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.contenido-textoSN p{
+    padding: 10px 50px 20px;
+    font-weight: 300;
+    text-align: justify;
+}
+.imagen-quienes-somos{
+    width: 35%;
+    border: 0cm;
+    display:block;
+    margin:auto;
+}
+</style>
+
+<body>
+
+<nav class="navbar navbar-expand-sm bg-danger navbar-danger">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/form">Libros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/formPres">Prestamos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/formAfi">Afiliados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/error">Error</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<header>
+    <section class="textos-header">
+        <h1>¡No hay entretenimiento tan barato como la lectura!</h1>
+        <h2>ni ningún placer tan duradero</h2>
+    </section>
+    <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                                                                    style="height: 100%; width: 100%;">
+        <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+              style="stroke: none; fill: #fff;"></path>
+    </svg></div>
+</header>
+<main>
+    <section class="contenedor sobre-nosotros">
+        <h2 class="titulo">¿Razones para leer? </h2>
+        <div class="contenedor-sobre-nosotros">
+            <img src="img/libro.png" alt="" class="imagen-about-us">
+            <div class="contenido-textos">
+                <h3><span>1</span>Nos permite crecer como personas</h3>
+                <p>
+                    Los libros nos permiten conocer y extraer nuevo vocabulario
+                    y conocimientos que de otra manera no sería posible.
+                </p>
+                <h3><span>2</span>Alimenta la imaginación, inspiración y hace que surjan ideas</h3>
+                <p>
+                    Los libros nos permiten recrear las escenas, experimentar sensaciones y acercarnos a nuevas realidades.
+                    De igual manera, la lectura nos sirve como arma de desconexión en aquellos momentos que más lo necesitamos.
+                </p>
+                <h3><span>3</span>Nos permite compartir</h3>
+                <p>
+                    Si un libro nos ha gustado, estoy seguro de que vas a ir corriendo a comentárselo a tus amigos o compañeros.
+                    ¡Eso también es parte de la lectura! Compartir y recomendar lo que estamos leyendo es estupendo para conocer
+                    otras opiniones, nuevas personas y, por qué no, nuestra próxima lectura.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="portafolio">
+        <div class="contenedor">
+            <h2 class="titulo">¿Que leeras con nosotros?</h2>
+            <div class="galeria-port">
+                <div class="imagen-port">
+                    <img src="img/Cuentos.jpeg" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/icono1.png" alt="">
+                        <p>Cuentos o novelas</p>
+                    </div>
+                </div>
+                <div class="imagen-port">
+                    <img src="img/consulta.png" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/icono1.png" alt="">
+                        <p>Libros de consulta</p>
+                    </div>
+                </div>
+                <div class="imagen-port">
+                    <img src="img/poesia.jpeg" alt="">
+                    <div class="hover-galeria">
+                        <img src="img/icono1.png" alt="">
+                        <p>Libros de poesía</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="clientes contenedor">
+        <h2 class="titulo">¿Qué dicen nuestros clientes?</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="img/testifica.JPG" alt="">
+                <div class="contenido-texto-card">
+                    <h4>Ing.Davila Sanches</h4>
+                    <p>
+                        Son un equipo eficaz y que siempre han sabido entregarme las lecturas que han hecho despertar mi niño interior
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/Testifica 2.JPG" alt="">
+                <div class="contenido-texto-card">
+                    <h4>Ing.Sebastian Vega</h4>
+                    <p>
+                        Gracias a sus libros e crecido tanto como persona y profesional.
+                        Son geniales
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="contenedor-footer">
+        <div class="content-foo">
+            <h4>Número de contacto</h4>
+            <p>0978641421</p>
+        </div>
+        <div class="content-foo">
+            <h4>Ubicación</h4>
+            <p>Quito-Ecuaro</p>
+        </div>
+    </div>
+    <h2 class="titulo-final">Danny Meneses-Patricio Morales-Jesus Taraguay</h2>
+</footer>
+</body>
+</html>
