@@ -3,10 +3,13 @@ package com.itsqmet.biblioteca.controller;
 import com.itsqmet.biblioteca.entidades.Afiliado;
 import com.itsqmet.biblioteca.entidades.Prestamo;
 import com.itsqmet.biblioteca.repositorios.AfiliadoRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -35,16 +38,11 @@ public class AfiliadoController {
     }
 
     @PostMapping("/formAfi")
-    public String nuevoAfiliado(Afiliado afiliado){
-        if (afiliado.getId()!=null){
-
+    public String nuevoAfiliado(@ModelAttribute("afiliado") @Valid Afiliado afiliado, BindingResult result) {
+        if (result.hasErrors()) {
+            return "formAfiliado";
         }
-        if (afiliado!=null){
-            afiliadoRepository.save(afiliado);
-
-        }else{
-            JOptionPane.showMessageDialog(null, "Ingrese los datos");
-        }
+        afiliadoRepository.save(afiliado);
         return "redirect:/listarAfiliado";
     }
 
