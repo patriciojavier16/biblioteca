@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AfiliadoRepository extends JpaRepository<Afiliado, Integer> {
+public interface AfiliadoRepository extends IGeneralRepo<Afiliado, Integer> {
 
 
 }
